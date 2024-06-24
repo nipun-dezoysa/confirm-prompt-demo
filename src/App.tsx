@@ -5,7 +5,7 @@ function App() {
 
   return (
     <>
-    <button onClick={() => showConfirm('Are you sure?')}/>
+    <button onClick={() => showConfirm('Are you sure?')}>Show Confirm Box</button>
     </>
   )
 }
