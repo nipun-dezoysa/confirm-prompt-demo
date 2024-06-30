@@ -7,16 +7,31 @@ import useAutosizeTextArea from "./useAutosizeTextArea";
 function App() {
   const textAreaRef = useRef<HTMLTextAreaElement>(null);
   const [result, setResult] = useState("");
-  const [options, setOptions] = useState({});
   const [title, setTitle] = useState("Are you sure?");
-  const [des, setDes] = useState(
+  const [description, setDescription] = useState(
     "This action cannot be undone. All values associated with this field will be lost."
   );
+  const [confirmLabel, setConfirmLabel] = useState("");
+  const [confirmColor, setConfirmColor] = useState("");
+  const [confirmTextColor, setConfirmTextColor] = useState("");
+  const [cancelLabel, setCancelLabel] = useState("");
+  const [cancelColor, setCancelColor] = useState("");
+  const [cancelTextColor, setCancelTextColor] = useState("");
+  const [hideCancel, setHideCancel] = useState(false);
+  const [disableBlur, setDisableBlur] = useState(false);
+  const [type, setType] = useState("info" as any);
+  const [color, setColor] = useState("");
+  const [hoverColor, setHoverColor] = useState("");
+  const [hoverTextColor, setHoverTextColor] = useState("");
+  const [iconColor, setIconColor] = useState("");
+  const [hideBackground, setHideBackground] = useState(false);
+  const [hideShadow, setHideShadow] = useState(false);
+  const [animation, setAnimation] = useState("scale" as any);
 
-  useAutosizeTextArea(textAreaRef.current, des);
+  useAutosizeTextArea(textAreaRef.current, description);
   const handleChange = (evt: React.ChangeEvent<HTMLTextAreaElement>) => {
     const val = evt.target?.value;
-    setDes(val);
+    setDescription(val);
   };
 
   return (
@@ -67,19 +82,82 @@ function App() {
               className="side-text"
               ref={textAreaRef}
               rows={2}
-              value={des}
+              value={description}
             />
+          </div>
+          <div className="side-section check">
+            <input
+              className="side-check"
+              type="checkbox"
+              id="can"
+              checked={hideCancel}
+              onChange={() => setHideCancel(!hideCancel)}
+            />
+            <label className="side-lable" htmlFor="can">
+              hide cancel button
+            </label>
+          </div>
+          <div className="side-section check">
+            <input
+              className="side-check"
+              type="checkbox"
+              id="blur"
+              checked={disableBlur}
+              onChange={() => setDisableBlur(!disableBlur)}
+            />
+            <label className="side-lable" htmlFor="blur">
+              Disable background cancellation
+            </label>
+          </div>
+          <div className="side-section check">
+            <input
+              className="side-check"
+              type="checkbox"
+              id="background"
+              checked={hideBackground}
+              onChange={() => setHideBackground(!hideBackground)}
+            />
+            <label className="side-lable" htmlFor="background">
+              Hide the dark background
+            </label>
+          </div>
+          <div className="side-section check">
+            <input
+              className="side-check"
+              type="checkbox"
+              id="shadow"
+              checked={hideShadow}
+              onChange={() => setHideShadow(!hideShadow)}
+            />
+            <label className="side-lable" htmlFor="shadow">
+              Hide the shadow
+            </label>
           </div>
         </div>
         <div className="w-[50%] flex flex-col items-center justify-center">
           <h1 className=" font-bold text-4xl">{result}</h1>
+          <p>showConfirm("{title}")</p>
           <button
             className="gg"
             onClick={() =>
               showConfirm(title, {
-                description:
-                  "",
-                type: "warning",
+                description,
+                confirmLabel,
+                confirmColor,
+                confirmTextColor,
+                cancelLabel,
+                cancelColor,
+                cancelTextColor,
+                hideCancel,
+                disableBlur,
+                type,
+                color,
+                hoverColor,
+                hoverTextColor,
+                iconColor,
+                hideBackground,
+                hideShadow,
+                animation,
               }).then((res) => {
                 if (res) {
                   setResult("Confirmed");
