@@ -56,8 +56,8 @@ function App() {
           </div>
         </div>
       </div>
-      <div className="w-full flex justify-between gap-3 px-10">
-        <div className="w-[50%] flex flex-col items-center gap-4">
+      <div className="w-full flex justify-evenly gap-3">
+        <div className="w-[35%] flex flex-col items-center gap-4">
           <div className="side-section">
             <h1 className="text-2xl font-semibold">Playground</h1>
             <p className="text-lg">

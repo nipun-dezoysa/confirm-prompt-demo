@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .side-section {
-  @apply w-[70%];
+  @apply w-full;
 }
 
 .side-title {
