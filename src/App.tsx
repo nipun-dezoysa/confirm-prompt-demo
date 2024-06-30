@@ -4,6 +4,7 @@ import { useState } from "react";
 import { FaGithub, FaNpm } from "react-icons/fa";
 import { useRef } from "react";
 import useAutosizeTextArea from "./useAutosizeTextArea";
+import { CopyBlock, dracula } from "react-code-blocks";
 function App() {
   const textAreaRef = useRef<HTMLTextAreaElement>(null);
   const [result, setResult] = useState("");
@@ -55,7 +56,7 @@ function App() {
           </div>
         </div>
       </div>
-      <div className="w-full flex justify-between gap-3">
+      <div className="w-full flex justify-between gap-3 px-10">
         <div className="w-[50%] flex flex-col items-center gap-4">
           <div className="side-section">
             <h1 className="text-2xl font-semibold">Playground</h1>
@@ -134,9 +135,20 @@ function App() {
             </label>
           </div>
         </div>
-        <div className="w-[50%] flex flex-col items-center justify-center">
+        <div className="w-[50%] flex flex-col">
           <h1 className=" font-bold text-4xl">{result}</h1>
           <p>showConfirm("{title}")</p>
+          <CopyBlock
+            text={`showConfirm("${title}", 
+              {
+              ${description ? "description : \"" + description+"\"" : ""}
+              }
+            );`}
+            language={"javascript"}
+            showLineNumbers={true}
+            theme={dracula}
+            codeBlock
+          />
           <button
             className="gg"
             onClick={() =>
