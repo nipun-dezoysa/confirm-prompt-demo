@@ -137,18 +137,6 @@ function App() {
         </div>
         <div className="w-[50%] flex flex-col">
           <h1 className=" font-bold text-4xl">{result}</h1>
-          <p>showConfirm("{title}")</p>
-          <CopyBlock
-            text={`showConfirm("${title}", 
-              {
-              ${description ? "description : \"" + description+"\"" : ""}
-              }
-            );`}
-            language={"javascript"}
-            showLineNumbers={true}
-            theme={dracula}
-            codeBlock
-          />
           <button
             className="gg"
             onClick={() =>
@@ -181,6 +169,19 @@ function App() {
           >
             Show Confirm Box
           </button>
+          <CopyBlock
+            text={`showConfirm("${title}",\n\t{\n${
+              description && `\t\tdescription : "${description}",\n`
+            }${hideCancel ? `\t\thideCancel : ${hideCancel},\n` : ""}${
+              disableBlur ? `\t\tdisableBlur : ${disableBlur},\n` : ""
+            }${
+              hideBackground ? `\t\thideBackground : ${hideBackground},\n` : ""
+            }${hideShadow ? `\t\thideShadow : ${hideShadow},\n` : ""}\t}\n);`}
+            language={"javascript"}
+            showLineNumbers={true}
+            theme={dracula}
+            codeBlock
+          />
         </div>
       </div>
     </div>
