@@ -1,3 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.side-section{
+  @apply w-[70%]
+}
+
+.side-title{
+  @apply  font-semibold
+}
+
+.side-text{
+  @apply w-full p-2 rounded-md bg-slate-500
+}
