@@ -189,7 +189,7 @@ function App() {
             <p className="side-title">Confirm button</p>
             <div className="flex gap-2">
               <div className="w-[50%]">
-                <p>Lable text</p>
+                <p className="small-title">Lable text</p>
                 <input
                   type="text"
                   className="side-text"
@@ -199,18 +199,46 @@ function App() {
                 />
               </div>
               <div className="w-[25%]">
-                <p>Text Color</p>
+                <p className="small-title">Text Color</p>
                 <Number
                   state={confirmTextColor}
                   setState={setConfirmTextColor}
                 />
               </div>
               <div className="w-[25%]">
-                <p>Button Color</p>
+                <p className="small-title">Button Color</p>
                 <Number state={confirmColor} setState={setConfirmColor} />
               </div>
             </div>
           </div>
+          {!hideCancel && (
+            <div className="side-section">
+              <p className="side-title">Cancel button</p>
+              <div className="flex gap-2">
+                <div className="w-[50%]">
+                  <p className="small-title">Lable text</p>
+                  <input
+                    type="text"
+                    className="side-text"
+                    placeholder="lable text"
+                    value={cancelLabel}
+                    onChange={(e) => setCancelLabel(e.target.value)}
+                  />
+                </div>
+                <div className="w-[25%]">
+                  <p className="small-title">Text Color</p>
+                  <Number
+                    state={cancelTextColor}
+                    setState={setCancelTextColor}
+                  />
+                </div>
+                <div className="w-[25%]">
+                  <p className="small-title">Button Color</p>
+                  <Number state={cancelColor} setState={setCancelColor} />
+                </div>
+              </div>
+            </div>
+          )}
         </div>
         <div className="w-[50%] flex flex-col">
           <h1 className=" font-bold text-4xl">{result}</h1>
