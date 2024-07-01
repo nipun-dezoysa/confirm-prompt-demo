@@ -86,6 +86,38 @@ function App() {
               value={description}
             />
           </div>
+          <div className="side-section flex gap-2">
+            <div className="w-[50%]">
+              <p className="side-title">Type</p>
+              <select
+                name="type"
+                className="side-text"
+                onChange={(e) => setType(e.target.value)}
+              >
+                <option value="info">info (default)</option>
+                <option value="warning">warning</option>
+                <option value="success">success</option>
+                <option value="question">question</option>
+              </select>
+            </div>
+            <div className="w-[50%]">
+              <p className="side-title">Animation</p>
+              <select
+                name="type"
+                className="side-text"
+                onChange={(e) => setAnimation(e.target.value)}
+              >
+                <option value="scale">scale (default)</option>
+                <option value="fade">fade</option>
+                <option value="blur">blur</option>
+                <option value="slide-up">slide-up</option>
+                <option value="slide-down">slide-down</option>
+                <option value="slide-right">slide-right</option>
+                <option value="slide-left">slide-left</option>
+                <option value="none">none</option>
+              </select>
+            </div>
+          </div>
           <div className="side-section check">
             <input
               className="side-check"
@@ -95,7 +127,7 @@ function App() {
               onChange={() => setHideCancel(!hideCancel)}
             />
             <label className="side-lable" htmlFor="can">
-              hide cancel button
+              Hide cancel button
             </label>
           </div>
           <div className="side-section check">
