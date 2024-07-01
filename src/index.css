@@ -8,6 +8,10 @@ input::-webkit-inner-spin-button {
   margin: 0;
 }
 
+.main-container {
+  @apply lg:px-[100px] md:px-[50px] px-5 w-full;
+}
+
 .side-section {
   @apply w-full;
 }
@@ -20,22 +24,22 @@ input::-webkit-inner-spin-button {
   @apply w-full p-2 rounded-md bg-slate-500;
 }
 
-.check{
-  @apply flex items-center
+.check {
+  @apply flex items-center;
 }
 
 .side-check {
   @apply w-4 h-4 text-blue-600 rounded focus:ring-blue-600 ring-offset-gray-800 focus:ring-2 bg-gray-700 border-gray-600;
 }
 
-.side-lable{
-  @apply ms-2 text-sm font-semibold text-blue-200
+.side-lable {
+  @apply ms-2 text-sm font-semibold text-blue-200;
 }
 
-.side-radio{
-  @apply w-4 h-4 text-blue-600 focus:ring-blue-600 ring-offset-gray-800 focus:ring-2 bg-gray-700 border-gray-600
+.side-radio {
+  @apply w-4 h-4 text-blue-600 focus:ring-blue-600 ring-offset-gray-800 focus:ring-2 bg-gray-700 border-gray-600;
 }
 
-.small-title{
-  @apply text-sm 
+.small-title {
+  @apply text-sm;
 }
