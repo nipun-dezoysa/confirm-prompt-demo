@@ -185,6 +185,32 @@ function App() {
               <Number state={iconColor} setState={setIconColor} />
             </div>
           </div>
+          <div className="side-section">
+            <p className="side-title">Confirm button</p>
+            <div className="flex gap-2">
+              <div className="w-[50%]">
+                <p>Lable text</p>
+                <input
+                  type="text"
+                  className="side-text"
+                  placeholder="lable text"
+                  value={confirmLabel}
+                  onChange={(e) => setConfirmLabel(e.target.value)}
+                />
+              </div>
+              <div className="w-[25%]">
+                <p>Text Color</p>
+                <Number
+                  state={confirmTextColor}
+                  setState={setConfirmTextColor}
+                />
+              </div>
+              <div className="w-[25%]">
+                <p>Button Color</p>
+                <Number state={confirmColor} setState={setConfirmColor} />
+              </div>
+            </div>
+          </div>
         </div>
         <div className="w-[50%] flex flex-col">
           <h1 className=" font-bold text-4xl">{result}</h1>
@@ -194,11 +220,13 @@ function App() {
               showConfirm(title, {
                 description,
                 confirmLabel,
-                confirmColor,
-                confirmTextColor,
+                confirmColor: confirmColor ? "#" + confirmColor : "",
+                confirmTextColor: confirmTextColor
+                  ? "#" + confirmTextColor
+                  : "",
                 cancelLabel,
-                cancelColor,
-                cancelTextColor,
+                cancelColor: cancelColor ? "#" + cancelColor : "",
+                cancelTextColor: cancelTextColor ? "#" + cancelTextColor : "",
                 hideCancel,
                 disableBlur,
                 type,
@@ -229,7 +257,13 @@ function App() {
               disableBlur ? `\t\tdisableBlur : ${disableBlur},\n` : ""
             }${
               hideBackground ? `\t\thideBackground : ${hideBackground},\n` : ""
-            }${hideShadow ? `\t\thideShadow : ${hideShadow},\n` : ""}\t}\n);`}
+            }${hideShadow ? `\t\thideShadow : ${hideShadow},\n` : ""}${
+              color ? `\t\tcolor : "#${color}",\n` : ""
+            }${hoverColor ? `\t\thoverColor : "#${hoverColor}",\n` : ""}${
+              hoverTextColor
+                ? `\t\thoverTextColor : "#${hoverTextColor}",\n`
+                : ""
+            }${iconColor ? `\t\ticonColor : "#${iconColor}",\n` : ""}\t}\n);`}
             language={"javascript"}
             showLineNumbers={true}
             theme={dracula}
