@@ -291,7 +291,21 @@ function App() {
               hoverTextColor
                 ? `\t\thoverTextColor : "#${hoverTextColor}",\n`
                 : ""
-            }${iconColor ? `\t\ticonColor : "#${iconColor}",\n` : ""}\t}\n);`}
+            }${iconColor ? `\t\ticonColor : "#${iconColor}",\n` : ""}${
+              confirmLabel ? `\t\tconfirmLabel : "${confirmLabel}",\n` : ""
+            }${
+              confirmTextColor
+                ? `\t\tconfirmTextColor : "#${confirmTextColor}",\n`
+                : ""
+            }${confirmColor ? `\t\tconfirmColor : "#${confirmColor}",\n` : ""}${
+              cancelLabel ? `\t\tconfirmLabel : "${cancelLabel}",\n` : ""
+            }${
+              cancelTextColor
+                ? `\t\tconfirmTextColor : "#${cancelTextColor}",\n`
+                : ""
+            }${
+              cancelColor ? `\t\tconfirmColor : "#${cancelColor}",\n` : ""
+            }\t}\n);`}
             language={"javascript"}
             showLineNumbers={true}
             theme={dracula}
