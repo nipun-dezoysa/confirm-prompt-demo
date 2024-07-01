@@ -5,6 +5,7 @@ import { FaGithub, FaNpm } from "react-icons/fa";
 import { useRef } from "react";
 import useAutosizeTextArea from "./useAutosizeTextArea";
 import { CopyBlock, dracula } from "react-code-blocks";
+import { Number } from "./components";
 function App() {
   const textAreaRef = useRef<HTMLTextAreaElement>(null);
   const [result, setResult] = useState("");
@@ -166,6 +167,11 @@ function App() {
               Hide the shadow
             </label>
           </div>
+          <div className="side-section">
+            <div className="w-[25%]">
+              <Number state={color} setState={setColor} />
+            </div>
+          </div>
         </div>
         <div className="w-[50%] flex flex-col">
           <h1 className=" font-bold text-4xl">{result}</h1>
@@ -204,6 +210,8 @@ function App() {
           <CopyBlock
             text={`showConfirm("${title}",\n\t{\n${
               description && `\t\tdescription : "${description}",\n`
+            }${type != "info" ? `\t\ttype : "${type}",\n` : ""}${
+              animation != "scale" ? `\t\tanimation : "${animation}",\n` : ""
             }${hideCancel ? `\t\thideCancel : ${hideCancel},\n` : ""}${
               disableBlur ? `\t\tdisableBlur : ${disableBlur},\n` : ""
             }${
