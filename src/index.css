@@ -9,7 +9,7 @@ input::-webkit-inner-spin-button {
 }
 
 .main-container {
-  @apply lg:px-[100px] md:px-[50px] px-5 w-full;
+  @apply lg:px-[150px] md:px-[50px] px-5 w-full;
 }
 
 .side-section {
