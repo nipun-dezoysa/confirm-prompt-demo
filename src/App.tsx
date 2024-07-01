@@ -2,6 +2,7 @@ import "./App.css";
 import { FaGithub, FaNpm } from "react-icons/fa";
 import PlayGround from "./PlayGround";
 import CustomIcons from "./CustomIcons";
+import Intro from "./Intro";
 function App() {
   
   return (
@@ -26,8 +27,9 @@ function App() {
             </div>
           </div>
         </div>
+        <Intro/>
         <PlayGround />
-        <CustomIcons/>
+        <CustomIcons />
       </div>
     </div>
   );
