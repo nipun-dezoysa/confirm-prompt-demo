@@ -30,11 +30,42 @@ function App() {
 
         <Intro />
 
-        <div className="main-container flex flex-col gap-2">
+        <div className="main-container flex flex-col gap-2 mt-5">
           <h1 className="text-2xl font-semibold">Installation</h1>
           <CopyBlock
             text={`npm i react-confirm-prompt`}
-            language={""}
+            language={"javascript"}
+            showLineNumbers={true}
+            theme={dracula}
+            codeBlock
+          />
+        </div>
+
+        <div className="main-container flex flex-col gap-2">
+          <h1 className="text-2xl font-semibold">Usage</h1>
+          <CopyBlock
+            text={`import { showConfirm } from "react-confirm-prompt";
+
+function App() {
+  function handleShowConfirm() {
+//showConfirm function
+    showConfirm("Are you sure?").then((answer) => {
+      if(answer) {
+        alert("You clicked Confirm");
+      } else {
+        alert("You clicked Cancel");
+      }
+    });
+
+  }
+  return (
+    <>
+      <button onClick={() => handleShowConfirm()}>Show Confirm</button>
+    </>
+  );
+}
+export default App;`}
+            language={"javascript"}
             showLineNumbers={true}
             theme={dracula}
             codeBlock
