@@ -167,10 +167,22 @@ function App() {
               Hide the shadow
             </label>
           </div>
-          <div className="side-section">
+          <div className="side-section flex gap-2">
             <div className="w-[25%]">
               <p className="side-title">Theme Color</p>
               <Number state={color} setState={setColor} />
+            </div>
+            <div className="w-[25%]">
+              <p className="side-title">Hover Color</p>
+              <Number state={hoverColor} setState={setHoverColor} />
+            </div>
+            <div className="w-[25%]">
+              <p className="side-title">Hover Text Color</p>
+              <Number state={hoverTextColor} setState={setHoverTextColor} />
+            </div>
+            <div className="w-[25%]">
+              <p className="side-title">Icon Color</p>
+              <Number state={iconColor} setState={setIconColor} />
             </div>
           </div>
         </div>
@@ -190,10 +202,10 @@ function App() {
                 hideCancel,
                 disableBlur,
                 type,
-                color,
-                hoverColor,
-                hoverTextColor,
-                iconColor,
+                color: color ? "#" + color : "",
+                hoverColor: hoverColor ? "#" + hoverColor : "",
+                hoverTextColor: hoverTextColor ? "#" + hoverTextColor : "",
+                iconColor: iconColor ? "#" + iconColor : "",
                 hideBackground,
                 hideShadow,
                 animation,
