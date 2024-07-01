@@ -169,6 +169,7 @@ function App() {
           </div>
           <div className="side-section">
             <div className="w-[25%]">
+              <p className="side-title">Theme Color</p>
               <Number state={color} setState={setColor} />
             </div>
           </div>

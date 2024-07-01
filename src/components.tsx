@@ -2,7 +2,7 @@ export function Number(props:{state:any,setState:any}){
     const {state,setState} = props;
     function handle(e:any){
         if(e.target.value.length<=6){
-            setState(e.target.value);
+            setState("#"+e.target.value);
         }
     }
     return (
