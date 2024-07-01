@@ -58,7 +58,7 @@ function App() {
             </div>
           </div>
         </div>
-        <div className="main-container flex justify-between my-10">
+        <div className="main-container flex justify-center gap-5 my-10">
           <div className="w-[40%] flex flex-col items-center gap-4">
             <div className="side-section">
               <h1 className="text-2xl font-semibold">Playground</h1>
@@ -241,7 +241,7 @@ function App() {
               </div>
             )}
           </div>
-          <div className="w-[50%] flex flex-col">
+          <div className="w-[50%] flex flex-col gap-5">
             <h1 className=" font-bold text-4xl">{result}</h1>
             <button
               className="gg"
@@ -302,18 +302,53 @@ function App() {
                   : ""
               }${
                 confirmColor ? `\t\tconfirmColor : "#${confirmColor}",\n` : ""
-              }${cancelLabel ? `\t\tconfirmLabel : "${cancelLabel}",\n` : ""}${
-                cancelTextColor
+              }${
+                !hideCancel && cancelLabel
+                  ? `\t\tconfirmLabel : "${cancelLabel}",\n`
+                  : ""
+              }${
+                !hideCancel && cancelTextColor
                   ? `\t\tconfirmTextColor : "#${cancelTextColor}",\n`
                   : ""
               }${
-                cancelColor ? `\t\tconfirmColor : "#${cancelColor}",\n` : ""
+                !hideCancel && cancelColor
+                  ? `\t\tconfirmColor : "#${cancelColor}",\n`
+                  : ""
               }\t}\n);`}
               language={"javascript"}
               showLineNumbers={true}
               theme={dracula}
               codeBlock
             />
+            <div className="w-full flex flex-col gap-2">
+              <h1 className="text-2xl font-semibold">Adding Custom Icons</h1>
+              <p>
+                With React Confirm Promt, you can easily customize your confirm
+                dialogs by adding custom icons.
+              </p>
+              <p>
+                First, visit the{" "}
+                <a
+                  className="text-green-300 hover:underline"
+                  href="https://react-icons.github.io/react-icons/"
+                >
+                  react-icons official website
+                </a>{" "}
+                to learn how to install and use react-icons in your project.
+                Once installed, import the specific icon you want to use.
+              </p>
+              <p>
+                Next, you can add the custom icon to your confirm box by passing
+                it as a React Element to the icon parameter.
+              </p>
+              <CopyBlock
+                text={`import { TiInfoOutline } from "react-icons/ti";\nimport { showConfirm } from "react-confirm-prompt";\n\nshowConfirm("Are you sure?", \n\t{\n\t\ticon: <TiInfoOutline />,\n\t}\n).then((answer) => {\n\tif (answer) {\n\t\talert("You clicked yes");\n\t} else {\n\t\talert("You clicked no");\n\t}\n});`}
+                language={"javascript"}
+                showLineNumbers={true}
+                theme={dracula}
+                codeBlock
+              />
+            </div>
           </div>
         </div>
       </div>
