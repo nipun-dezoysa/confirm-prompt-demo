@@ -150,20 +150,20 @@ export default function PlayGround() {
               Hide the shadow
             </label>
           </div>
-          <div className="side-section flex gap-2">
-            <div className="w-[25%]">
+          <div className="side-section flex gap-2 max-md:flex-wrap">
+            <div className="color-box">
               <p className="side-title">Theme Color</p>
               <Number state={color} setState={setColor} />
             </div>
-            <div className="w-[25%]">
+            <div className="color-box">
               <p className="side-title">Hover Color</p>
               <Number state={hoverColor} setState={setHoverColor} />
             </div>
-            <div className="w-[25%]">
+            <div className="color-box">
               <p className="side-title">Hover Text Color</p>
               <Number state={hoverTextColor} setState={setHoverTextColor} />
             </div>
-            <div className="w-[25%]">
+            <div className="color-box">
               <p className="side-title">Icon Color</p>
               <Number state={iconColor} setState={setIconColor} />
             </div>

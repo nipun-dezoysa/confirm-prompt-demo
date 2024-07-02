@@ -6,7 +6,7 @@ export default function Intro() {
     <div className="main-container">
       <h1 className="text-3xl font-bold mb-2">React Confirm Prompt</h1>
       <div className="flex max-lg:flex-col gap-5">
-        <div className="w-[50%] max-lg:w-full">
+        <div className="w-[50%] max-lg:w-full break-normal">
           ReactConfirmPrompt is a versatile and user-friendly React component
           designed to create confirm dialogs with ease. It is fully responsive,
           highly customizable, and simple to integrate into your React
@@ -14,14 +14,14 @@ export default function Intro() {
           decisions, or display alerts, ReactConfirmBox provides a seamless
           solution to enhance user interactions.
         </div>
-        <div className="w-[50%] max-lg:w-full flex items-center justify-center gap-4">
+        <div className="w-[50%] max-lg:w-full flex max-md:flex-col items-center justify-center gap-4">
           <button
             onClick={() => confirm("Press a button!\nEither OK or Cancel.")}
             className="gg"
           >
             Defualt Confirm
           </button>
-          <div>VS</div>
+          <div className='text-lg font-semibold'>VS</div>
           <button
             onClick={() =>
               showConfirm("Hi! I am a confirm dialog.", {

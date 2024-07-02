@@ -43,3 +43,7 @@ input::-webkit-inner-spin-button {
 .small-title {
   @apply text-sm;
 }
+
+.color-box{
+  @apply w-[25%] max-md:w-[48%];
+}
