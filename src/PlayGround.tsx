@@ -46,8 +46,8 @@ export default function PlayGround() {
           real-time.
         </p>
       </div>
-      <div className="flex justify-between gap-5">
-        <div className="w-[50%] flex flex-col items-center gap-4">
+      <div className="flex max-lg:flex-col justify-between gap-5">
+        <div className="w-[50%] max-lg:w-full flex flex-col items-center gap-4">
           <div className="side-section">
             <p className="side-title">Title</p>
             <input
@@ -223,7 +223,7 @@ export default function PlayGround() {
             </div>
           )}
         </div>
-        <div className="w-[50%] flex flex-col gap-5">
+        <div className="w-[50%] max-lg:w-full flex flex-col gap-5">
           <h1 className=" font-bold text-4xl">{result}</h1>
           <button
             className="gg"

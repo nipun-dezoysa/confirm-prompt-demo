@@ -17,7 +17,7 @@ input::-webkit-inner-spin-button {
 }
 
 .side-title {
-  @apply font-semibold;
+  @apply font-semibold max-md:text-xs;
 }
 
 .side-text {
