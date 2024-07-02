@@ -4,6 +4,7 @@ import PlayGround from "./PlayGround";
 import CustomIcons from "./CustomIcons";
 import Intro from "./Intro";
 import { CopyBlock, dracula } from "react-code-blocks";
+import Options from "./Options";
 function App() {
   return (
     <div className="w-full flex justify-center">
@@ -75,6 +76,12 @@ export default App;`}
         <PlayGround />
 
         <CustomIcons />
+
+        <Options/>
+
+        <div className="bg-gray-900 py-2 text-center text-sm">
+          Copyright © {new Date().getFullYear()} nipun-dezoysa
+        </div>
       </div>
     </div>
   );

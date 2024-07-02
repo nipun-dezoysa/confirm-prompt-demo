@@ -16,7 +16,7 @@ export default function CustomIcons() {
         >
           react-icons official website
         </a>{" "}
-        to install in your project. Once installed, import the specific icon you
+        to install react-icons in your project. Once installed, import the specific icon you
         want to use.
       </p>
       <p>

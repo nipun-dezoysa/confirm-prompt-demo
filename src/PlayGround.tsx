@@ -226,7 +226,7 @@ export default function PlayGround() {
         <div className="w-[50%] max-lg:w-full flex flex-col gap-5">
           <h1 className=" font-bold text-4xl">{result}</h1>
           <button
-            className="gg"
+            className="gg max-md:border-[#646cff]"
             onClick={() =>
               showConfirm(title, {
                 description,
