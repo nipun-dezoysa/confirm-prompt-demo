@@ -1,4 +1,3 @@
-import React from 'react';
 import { showConfirm } from "react-confirm-prompt";
 
 export default function Intro() {
