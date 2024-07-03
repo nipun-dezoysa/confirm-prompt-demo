@@ -1,5 +1,3 @@
-import React from "react";
-
 const values = [
   { op: "description", des: "description for conirmation box", ty: "string" },
   {
