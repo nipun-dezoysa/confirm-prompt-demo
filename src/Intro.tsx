@@ -8,14 +8,16 @@ export default function Intro() {
         <div className="w-[50%] max-lg:w-full break-normal">
           ReactConfirmPrompt is a versatile and user-friendly React component
           designed to create confirm dialogs with ease. It is{" "}
-          <span className="bg-gray-500">
+          <span className="bg-gray-500 px-1">
             fully responsive, highly customizable, and simple to integrate
           </span>{" "}
           into your React applications. Whether you need to confirm user
           actions, prompt for decisions, or display alerts, ReactConfirmBox
           provides a seamless solution to enhance user interactions.{" "}
-          <span className="bg-gray-500">v1.1.1 of React Confirm Promt</span> is
-          now released!
+          <span className="bg-gray-500 px-1">
+            v1.1.1 of React Confirm Promt
+          </span>{" "}
+          is now released!
         </div>
         <div className="w-[50%] max-lg:w-full flex max-md:flex-col items-center justify-center gap-4">
           <button

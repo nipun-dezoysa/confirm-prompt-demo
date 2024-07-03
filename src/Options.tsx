@@ -89,41 +89,42 @@ const values = [
 
 export default function Options() {
   return (
-    <div className="main-container overflow-x-auto relative flex flex-col gap-2">
+    <div className="main-container  flex flex-col gap-2">
       <div>
         <h1 className="text-2xl font-semibold">Options</h1>
-        <p>
-          You can customize the confirm box with the following options,</p>
+        <p>You can customize the confirm box with the following options,</p>
       </div>
-      <table className="w-full text-sm text-left rtl:text-right  text-gray-400 border-gray-700 border">
-        <thead className="text-xs  uppercase  bg-gray-700 text-gray-400">
-          <tr>
-            <th scope="col" className="px-6 py-3">
-              Option
-            </th>
-            <th scope="col" className="px-6 py-3">
-              Description
-            </th>
-            <th scope="col" className="px-6 py-3">
-              type(s)
-            </th>
-          </tr>
-        </thead>
-        <tbody>
-          {values.map((value, index) => (
-            <tr
-              key={index}
-              className=" odd:bg-gray-900  even:bg-gray-800 border-b border-gray-700"
-            >
-              <td className="px-6 py-4">
-                <span className="bg-gray-700 px-2 rounded">{value.op}</span>
-              </td>
-              <td className="px-6 py-4">{value.des}</td>
-              <td className="px-6 py-4">{value.ty}</td>
+      <div className="w-full overflow-x-auto relative">
+        <table className="w-full text-sm text-left rtl:text-right  text-gray-400 border-gray-700 border">
+          <thead className="text-xs  uppercase  bg-gray-700 text-gray-400">
+            <tr>
+              <th scope="col" className="px-6 py-3">
+                Option
+              </th>
+              <th scope="col" className="px-6 py-3">
+                Description
+              </th>
+              <th scope="col" className="px-6 py-3">
+                type(s)
+              </th>
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {values.map((value, index) => (
+              <tr
+                key={index}
+                className=" odd:bg-gray-900  even:bg-gray-800 border-b border-gray-700"
+              >
+                <td className="px-6 py-4">
+                  <span className="bg-gray-700 px-2 rounded">{value.op}</span>
+                </td>
+                <td className="px-6 py-4">{value.des}</td>
+                <td className="px-6 py-4">{value.ty}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 }
